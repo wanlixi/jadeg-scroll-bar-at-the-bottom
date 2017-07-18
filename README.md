@@ -1,6 +1,6 @@
 # Jadeg scroll bar at the bottom
 ### 判断滚动条是否是在滚到最底部，支持PC滚动加载和MOBILE端上拉加载
-#### 自己用原生封装的，所以兼容性比较好
+#### 自己在项目中遇到这个使用场景，所以用原生封装的，兼容性比较好，以下是从项目中抽离出来核心的功能
 ## Welcome Star or Issues
 ```
 <template>
