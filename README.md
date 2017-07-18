@@ -13,7 +13,8 @@
     <ul>
       <li v-for="(item, index) in list" :key="index">{{item}}</li>
     </ul>
-    <div class="mark" v-show="loading"></div>
+    // 加载过程中显示蒙版及提示动画或文字，可以有效防止用户连续滑动
+    <div class="mark" v-show="loading"></div>
   </div>
 </template>
 <script type="text/babel">
@@ -24,7 +25,11 @@ export default {
     ey: null,
     distanceY: null,
     loadState: false,
-    loadText: 'loading...'
+    loadText: 'loading...',
+    // 手指垂直滑动的距离，越小越灵敏
+    verticalDragLimit: 30,
+    // 滚动条到最底部的距离
+    scrollbarToBottomLimit: 10
   },
   computed: {
     getScrollTop () {
@@ -59,7 +64,10 @@ export default {
       e = e || window.event
       self.ey = e.touches[0].pageY
       self.distanceY = self.ey - self.sy
-      if (self.distanceY < -30 && self.getScrollHeight - self.getScrollTop - self.getWindowsHeight < 10) {
+      // dragUp to load
+      if (self.distanceY < -this.verticalDragLimit && self.getScrollHeight - self.getScrollTop - self.getWindowsHeight < scrollbarToBottomLimit) {
+      // drag to down
+      // if (self.distanceY > this.verticalDragLimit) {
         self.loadState = true
         axios({
           url: '',
@@ -80,6 +88,9 @@ export default {
         })
       }
     },
+    loadTouchEnd () {
+    
+    }
   }
   
 }
