@@ -14,7 +14,7 @@
       <li v-for="(item, index) in list" :key="index">{{item}}</li>
     </ul>
     // 加载过程中显示蒙版及提示动画或文字，可以有效防止用户连续滑动
-    <div class="mark" v-show="loading"></div>
+    <div class="mark" v-show="loadState">{{loadText}}</div>
   </div>
 </template>
 <script type="text/babel">
