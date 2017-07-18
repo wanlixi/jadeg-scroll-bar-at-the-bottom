@@ -77,7 +77,8 @@ export default {
           }
         }).then(function(res){
           self.loadText = 'load success!'
-          setTimeout(function(){
+          self.list.push(res.data)
+          setTimeout(function(){
             self.loadState = false
           },2000)
         }).catch(function(err){
