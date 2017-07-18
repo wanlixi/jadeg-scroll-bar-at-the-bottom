@@ -4,9 +4,9 @@
 ## Welcome Star or Issues
 ```
 <template>
-<!-- if PC platform -->
+<!-- if isPC -->
   <div @wheel="scrollLoad">
-<!-- if mobile platform -->
+<!-- if isMobile -->
   <div @touchstart="loadTouchStart($event)"
        @touchmove="loadTouchMove($event)"
        @touchend="loadTouchEnd">
