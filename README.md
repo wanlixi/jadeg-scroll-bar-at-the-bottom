@@ -1,7 +1,7 @@
-# jadeg-scroll-bar-at-the-bottom
+# Jadeg scroll bar at the bottom
 ### 判断滚动条是否是在滚到最底部，支持PC滚动加载和MOBILE端上拉加载
 #### 自己用原生封装的，所以兼容性比较好
-## welcome Star or Issues
+## Welcome Star or Issues
 ```
 <template>
 <!-- if PC platform -->
